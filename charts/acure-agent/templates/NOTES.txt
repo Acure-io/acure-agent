@@ -1,0 +1,3 @@
+The acure-agent has been installed.
+
+Now you can see agent connection on coordinator stats.

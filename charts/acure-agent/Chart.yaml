@@ -1,0 +1,6 @@
+apiVersion: v2
+name: acure-agent
+description: Helm chart to install acure-agent
+type: application
+home: https://acure.io
+version: 1.0.0
