@@ -53,13 +53,19 @@ jobs:
           helm push ${{ env.IMAGE_NAME }}-${{ github.ref_name }}.tgz oci://${{ env.REGISTRY }}/charts
           helm registry logout ${{ env.REGISTRY }}
 
+      - name: Generate changelog
+        id: changelog
+        uses: metcalfc/changelog-generator@v4.1.0
+        with:
+          myToken: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
           name: ${{ env.IMAGE_NAME }} v${{ github.ref_name }}
           body: |
             Changes in this Release:
-            Release Chart #1
+            ${{ steps.changelog.outputs.changelog }}
             
             Installation:
             `helm install ${{ env.IMAGE_NAME }} oci://${{ env.REGISTRY }}/charts/${{ env.IMAGE_NAME }} --version ${{ github.ref_name }}`
