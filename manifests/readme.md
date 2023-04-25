@@ -7,6 +7,8 @@ Install the Acure-agent as a Deployment to your Kubernetes cluster by applying t
 export ACURE_URI="https://<myspace>.acure.io"
 export ACURE_KEY="<my coordinator key>"
 
-envsubst < acure-agent.yaml | kubectl apply -f https://raw.githubusercontent.com/Acure-io/acure-agent/main/manifests/acure-agent/acure-agent.yaml
+curl https://raw.githubusercontent.com/Acure-io/acure-agent/main/manifests/acure-agent/acure-agent.yaml -o acure-agent.yaml 
+
+envsubst < acure-agent.yaml | kubectl apply -f -
 ```
 It also creates ClusterRole, ClusterRoleBinding, ServiceAccount and Secret for token.
