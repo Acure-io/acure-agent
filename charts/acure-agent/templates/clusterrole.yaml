@@ -9,7 +9,7 @@ rules:
   resources:
   - nodes
   - pods
-  - persistenvolumes
+  - persistentvolumes
   - events
   - services
   - endpoints
