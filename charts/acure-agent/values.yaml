@@ -35,12 +35,12 @@ imagePullSecrets: []
 
 ## Define requests resources to avoid probe issues due to CPU utilization in busy nodes
 resources:
-  ##  limits:
-  ##    cpu: 500m
-  ##    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
   requests:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 250m
+    memory: 256Mi
 
 # -- Node labels for agent pod assignment
 ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
