@@ -35,9 +35,9 @@ imagePullSecrets: []
 
 ## Define requests resources to avoid probe issues due to CPU utilization in busy nodes
 resources:
-  limits:
-    cpu: 500m
-    memory: 512Mi
+#  limits:
+#    cpu: 500m
+#    memory: 512Mi
   requests:
     cpu: 250m
     memory: 256Mi
